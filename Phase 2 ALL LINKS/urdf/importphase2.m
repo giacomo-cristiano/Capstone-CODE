@@ -1,6 +1,6 @@
 %% BASIC STATIC ROBOT 
 % Load the robot
-robot = importrobot('C:\Users\User\OneDrive - University of Toronto\4th year TERM 1\APS 490 CAPSTONE\Robot Modellig\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
+robot = importrobot('C:\Users\User\OneDrive - University of Toronto\Capstone-CODE\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
 
 % Show robot model
 % show(robot);
@@ -16,7 +16,6 @@ disp(['First Joint Name: ', firstJointName]);
 % Get default joint configuration
 q0 = homeConfiguration(robot);
 
-
 % Find the correct index of the first joint
 jointIdx = find(strcmp({q0.JointName}, firstJointName));
 
@@ -28,7 +27,7 @@ show(robot, q0)
 %% Manual JOINT CHECK 
 
 % Load the robot
-robot = importrobot('C:\Users\User\OneDrive - University of Toronto\4th year TERM 1\APS 490 CAPSTONE\Robot Modellig\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
+robot = importrobot('C:\Users\User\OneDrive - University of Toronto\Capstone-CODE\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
 
 % Show robot model
 % show(robot);
@@ -52,7 +51,7 @@ for i = 1:min(length(q0), 6)  % Ensure we don't exceed available joints
     disp(['Updating Joint: ', q0(i).JointName]);  % Display joint name
     q0(i).JointPosition = jointPositions(i);  % Assign manual values
 end
-
+% overwrites each one 
 % Show the updated robot visualization
 show(robot, q0);
 
@@ -72,7 +71,7 @@ else
 end
 
 % Load the robot
-robot = importrobot('C:\Users\User\OneDrive - University of Toronto\4th year TERM 1\APS 490 CAPSTONE\Robot Modellig\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
+robot = importrobot('C:\Users\User\OneDrive - University of Toronto\Capstone-CODE\Phase 2 ALL LINKS\urdf\Phase 2 ALL LINKS.urdf');
 
 % Show robot model in the existing figure
 ax = show(robot); 
@@ -110,5 +109,3 @@ for i = 1:min(length(q0), 6)  % Ensure we don't exceed available joints
         pause(pauseDuration); % Small delay to visualize movement
     end
 end
-
-
